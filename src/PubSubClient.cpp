@@ -433,9 +433,9 @@ boolean PubSubClient::loop() {
     return false;
 }
 
-boolean PubSubClient::publish(const char* topic, const char* payload) {
-    return publish(topic,(const uint8_t*)payload, payload ? strnlen(payload, this->bufferSize) : 0,false);
-}
+// boolean PubSubClient::publish(const char* topic, const char* payload) {
+//     return publish(topic,(const uint8_t*)payload, payload ? strnlen(payload, this->bufferSize) : 0,false);
+// }
 
 void PubSubClient::publish(const char* topic, const char* payload,int qos=0, boolean retained=false) {
     this->_client.publishMessage(topic,payload,qos,retained);
