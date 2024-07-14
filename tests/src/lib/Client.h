@@ -10,6 +10,9 @@ public:
   virtual size_t write(const uint8_t *buf, size_t size) =0;
   virtual int available() = 0;
   virtual int read() = 0;
+  virtual void publishMessage(const char* topic, const char* payload,int qos,bool retain,int mux);
+  virtual void subscribeTopic(const char* topic,int qos);
+  virtual void  unsubscribeTopic(const char* topic)
   virtual int read(uint8_t *buf, size_t size) = 0;
   virtual int peek() = 0;
   virtual void flush() = 0;
