@@ -149,7 +149,7 @@ public:
    boolean connect(const char* id, const char* user, const char* pass, const char* willTopic, uint8_t willQos, boolean willRetain, const char* willMessage, boolean cleanSession);
    void disconnect();
    void publish(const char* topic, const char* payload,int qos=0, boolean retained=false);
-   boolean publish(const char* topic, const char* payload);
+   // boolean publish(const char* topic, const char* payload);
    // Write a single byte of payload (only to be used with beginPublish/endPublish)
    virtual size_t write(uint8_t);
    // Write size bytes from buffer into the payload (only to be used with beginPublish/endPublish)
