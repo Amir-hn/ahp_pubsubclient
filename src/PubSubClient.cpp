@@ -438,7 +438,7 @@ boolean PubSubClient::loop() {
 // }
 
 void PubSubClient::publish(const char* topic, const char* payload,int qos=0, boolean retained=false) {
-    this->_client.publishMessage(topic,payload,qos,retained);
+    this->_client->publishMessage(topic,payload,qos,retained);
 }
 
 
@@ -508,7 +508,7 @@ boolean PubSubClient::subscribe(const char* topic, int qos) {
     
     if (connected()) {
         // Leave room in the buffer for header and variable length field
-      this->_client.subscribeTopic(topic,qos);
+      this->_client->subscribeTopic(topic,qos);
       return true;
     }
     Serial.println("MQTT not connected");
@@ -517,7 +517,7 @@ boolean PubSubClient::subscribe(const char* topic, int qos) {
 
 boolean PubSubClient::unsubscribe(const char* topic) {
     if (connected()) {
-         this->_client.unsubscribeTopic(topic);
+         this->_client->unsubscribeTopic(topic);
          return true;
     }
     Serial.println("MQTT not connected");
