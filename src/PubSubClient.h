@@ -11,6 +11,7 @@
 #include "IPAddress.h"
 #include "Client.h"
 #include "Stream.h"
+#include "AhpClient.h"
 
 #define MQTT_VERSION_3_1      3
 #define MQTT_VERSION_3_1_1    4
@@ -87,7 +88,7 @@
 
 class PubSubClient : public Print {
 private:
-   Client* _client;
+   AhpClient* _client;
    uint8_t* buffer;
    uint16_t bufferSize;
    uint16_t keepAlive;
